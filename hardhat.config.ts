@@ -1,7 +1,7 @@
-import "hardhat-deploy"
-import "@nomiclabs/hardhat-ethers"
-import "@typechain/hardhat"
-import { HardhatUserConfig } from "hardhat/types"
+import { HardhatUserConfig } from 'hardhat/types';
+import 'hardhat-deploy';
+import '@nomiclabs/hardhat-ethers';
+import '@typechain/hardhat';
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -11,21 +11,23 @@ import { HardhatUserConfig } from "hardhat/types"
 // };
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "hardhat",
-  networks: { 
+  defaultNetwork: 'hardhat',
+  networks: {
     hardhat: {
-      chainId: 31337
-    }, 
+      chainId: 31337,
+      allowUnlimitedContractSize: true,
+    },
     localhost: {
-      chainId: 31337
-    }
+      chainId: 31337,
+      allowUnlimitedContractSize: true,
+    },
   },
   namedAccounts: {
     deployer: {
-      default: 0
-    }
+      default: 0,
+    },
   },
-  solidity: "0.8.8"
-} 
+  solidity: '0.8.8',
+};
 
-export default config
+export default config;
